@@ -1,0 +1,25 @@
+Name: Gauri Soni  
+Email: gauri22102003@gmail.com  
+Phone: +91-6389866808  
+Experience: 1 year  
+
+Skills: 
+C, C++, HTML, CSS, JavaScript, SQL,
+Qt (C++), Bootstrap,
+Photoshop, Canva, Git
+
+Projects:
+- Railway Management System (April 2024): Built a Qt-based train ticketing GUI app with login/signup, real-time train search, and booking history. Integrated SQLite for backend data management.
+- Easy For You – Hand Sign Detector (Nov 2024): Real-time alphabet sign language detector using Python, TensorFlow, MediaPipe, and OpenCV. Included text-to-speech integration and predictive communication.
+
+Achievements:
+- Mentor, Techblocks 10.1 Web Dev Workshop
+- 2nd Place – WIE Day Digital Poster Competition
+- Presented Hand Sign Detector at SPARK Exhibition, CICE JIIT
+
+Positions:
+- Volunteer, Creativity & Innovation Cell (July 2024–Present)
+- Volunteer, IEEE JIIT (July 2024–Present)
+
+Body:
+Gauri is a proactive and creative developer, specializing in C++ GUI development and real-time computer vision applications. Her projects span accessibility solutions like sign detection and robust desktop systems for train management. A mentor and community contributor, she brings both technical strength and user-centered design to her work.

@@ -1,0 +1,23 @@
+Name: Ashish Kaushik  
+Email: 23103347@mail.jiit.ac.in  
+Phone: +91-7048964921  
+Experience: 1 year  
+
+Skills:
+C++, Java, Python, C, HTML, CSS, JavaScript, SQL,
+Qt[C++], Linux,
+Git, Photoshop, Premier Pro, CapCut, Canva, After Effects, Lightroom
+
+Projects:
+- Arcade Fusion (2023): GUI-based arcade game manager using Qt (C++17). Combined frontend GUI with terminal-based retro games. Used OOP principles for modular game management.
+- Real-Time Language Translator (2024): Streamlit-based live translator using Google Speech API, GoogleTrans, GTTS, and PyGame. Delivered accurate, real-time translations with TTS and speech recognition.
+
+Achievements:
+- Presented Real-Time Translator at SPARK'24, CICE JIIT
+
+Positions:
+- Volunteer, Tech CSE, Creativity and Innovation Cell in Electronics (2024–Present)
+- Volunteer, Tech CSE, Microcontroller Systems & Robotics Hub (2024–Present)
+
+Body:
+Ashish is a versatile developer with strong C++ and Python experience, focusing on real-world applications through GUI and speech technologies. His projects demonstrate a blend of low-level programming with user-focused interfaces, including arcade-style games and real-time language translation tools. He is actively involved in technical cells at JIIT, contributing to robotics, embedded systems, and innovation-driven development.

@@ -1,0 +1,30 @@
+Name: Aditya Pratap Singh  
+Email: the.adityasingh280105@gmail.com  
+Phone: +91-8800503633  
+Experience: 1 year  
+
+Skills: 
+Java, Python, C++, JavaScript, HTML, CSS, MySQL, 
+Qt(C++), Bootstrap,
+Photoshop, Figma, Canva, DaVinci Resolve
+
+Projects:
+- Railway Management System (2023–Present): Qt + SQLite-based app for train ticket booking and cancellation. Added history tracking and optimized DB queries.
+- Home Automation System (2023–Present): IoT-based smart home system with NodeMCU, Blynk Cloud, and sensor-driven controls. Included voice and Wi-Fi automation for smart devices.
+
+Certifications:
+- 1st in Power 2.0 Workshop – Creativity & Innovation Cell (CICE, JIIT)
+- 2nd in Execute 25.1 – Programming contest by KNUTH, JIIT
+
+Achievements:
+- Mentor, Techblocks Gen AI Workshop – IEEE JIIT
+- Presented Driver Drowsiness Detector at SPARK, CICE JIIT
+- Presented Home Automation Project at VIDYUT, CICE JIIT
+
+Positions:
+- Volunteer, Creativity & Innovation Cell (2024–Present)
+- Volunteer, IEEE JIIT (2024–Present)
+- Core Team, DSC JIIT (2024–Present)
+
+Body:
+Aditya is a budding technologist with a passion for embedded systems, IoT, and backend engineering. His Railway Management System reflects strong DB design and C++ OOP, while the Home Automation project highlights real-world innovation with sensors and cloud-based control. A contributor to workshops and exhibitions, he blends practical application with a strong CS foundation.

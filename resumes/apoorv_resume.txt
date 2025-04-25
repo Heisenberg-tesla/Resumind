@@ -1,0 +1,30 @@
+Name: Apoorv Mittal  
+Email: apoorvmittal125@gmail.com  
+Phone: +91-9560861710  
+Experience: 2 years  
+
+Skills: 
+C++, Python, JavaScript, C, HTML, CSS, C#, 
+React, MongoDB, Firebase, Kotlin, Flutter,
+Unity, Godot, SDL2,
+Arduino, NodeMCU, FPGA,
+Git, Canva, Figma, Photoshop, Premiere Pro  
+
+Projects:
+- Space Invader: Designed a retro shooter game using C++ and SDL2. Optimized frame rate and implemented player control precision.
+- IEEE Website: Built a React-based official IEEE SB JIIT website with React Spline and CSS. Led UI/UX improvements.
+- PixVault Image Uploader: Developed a dynamic image upload platform using MERN stack. Integrated Cloudinary for image compression.
+
+Achievements:
+- 1st Place at Tryst’25, IIT Delhi by Mappls MapmyIndia (Internship offered)
+- 2nd Place in Execute 25.1 CP competition at JIIT
+- AIR 10 in Coding Ninja’s Founder Invitation
+- Finalist in Google Code to Learn (Scratch-based game)
+- Top 10 in HackCOG, IIIT Delhi
+
+Positions:
+- Core Team, DSC JIIT
+- Volunteer, IEEE SB JIIT
+
+Body:
+Apoorv is a tech enthusiast passionate about AI, development, and game design. With strong roots in C++ and modern web technologies, he has built robust projects and contributed to open-source. His game development journey includes Unity and SDL2, while his backend work is centered on the MERN stack. As a student leader, he balances innovation and collaboration, with accolades across hackathons and coding competitions.

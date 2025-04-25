@@ -1,0 +1,23 @@
+Name: Nehal Jain  
+Email: nehaljain0730@gmail.com  
+Phone: +91-9599797061  
+Experience: 1 year  
+
+Skills: 
+Java, C++, C, HTML, CSS, JavaScript, SQL, 
+Qt(C++), Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, Mongoose, React.js, 
+EJS, Passport.js, Cloudinary, Canva, Git, GitHub
+
+Projects:
+- WanderLust (2025): Airbnb-like platform with Node.js, Express, and MongoDB. Features secure login via Passport.js and Cloudinary-based image storage.
+- Blog Template (2025): Dynamic, responsive blog using HTML, CSS, and JavaScript.
+- Arcade Fusion (2023): Interactive arcade game using Qt and C++17, optimized for smooth 60 FPS gameplay.
+- EmoTrack (2024): AI facial recognition system using OpenCV and deep learning, achieving 90%+ accuracy on a 10K+ image dataset.
+
+Achievements:
+- 2nd place for "EmoTrack" at Spark'24, CICE JIIT
+- IEEE JIIT – Techblocks 9.1 (Web Development)
+- GDSC JIIT – Generative AI Study Jams 2023
+
+Body:
+Nehal is a skilled developer with strong expertise in both frontend and backend web development. Her work ranges from dynamic web platforms to AI-integrated applications. With hands-on experience in C++, React, and MongoDB, she’s built production-ready tools like WanderLust and EmoTrack. Passionate about innovation and clean code, she brings both technical rigor and design sense to her projects.
