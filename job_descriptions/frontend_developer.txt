@@ -1,0 +1,33 @@
+Frontend Developer
+
+Required Skills:
+- Must have strong JavaScript programming skills
+- Required experience with React.js
+- Must have experience with HTML5 and CSS3
+- Required knowledge of responsive design
+- Must have experience with version control (Git)
+
+Preferred Skills:
+- Experience with TypeScript
+- Knowledge of state management (Redux, Context API)
+- Experience with testing frameworks (Jest, React Testing Library)
+- Understanding of web performance optimization
+- Strong problem-solving abilities
+- Good communication skills
+- Attention to detail
+
+Responsibilities:
+- Develop and maintain user interfaces
+- Implement responsive designs
+- Optimize application performance
+- Collaborate with backend developers
+- Write clean, maintainable code
+- Participate in code reviews
+- Debug and fix issues
+
+Qualifications:
+- Bachelor's degree in Computer Science or related field
+- 2+ years of frontend development experience
+- Strong understanding of web standards
+- Experience with modern frontend build tools
+- Ability to work in a team environment 

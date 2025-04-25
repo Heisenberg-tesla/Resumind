@@ -1,0 +1,30 @@
+Backend Software Engineer
+
+Required Skills:
+- Must have strong proficiency in C++
+- Required experience with database design and SQL
+- Must have experience with RESTful API development
+- Required knowledge of data structures and algorithms
+- Must have experience with version control (Git)
+
+Preferred Skills:
+- Experience with cloud platforms (AWS, Azure, or GCP)
+- Knowledge of Docker and Kubernetes
+- Experience with microservices architecture
+- Understanding of CI/CD pipelines
+- Strong problem-solving abilities
+- Good communication skills
+
+Responsibilities:
+- Design and implement scalable backend systems
+- Optimize database performance
+- Write clean, maintainable code
+- Collaborate with frontend developers
+- Participate in code reviews
+- Debug and fix issues in production
+
+Qualifications:
+- Bachelor's degree in Computer Science or related field
+- 3+ years of backend development experience
+- Strong analytical and critical thinking skills
+- Ability to work in a team environment 

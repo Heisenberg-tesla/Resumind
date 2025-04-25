@@ -1,0 +1,31 @@
+Data Scientist
+
+Required Skills:
+- Must have strong Python programming skills
+- Required experience with machine learning algorithms
+- Must have experience with data analysis and visualization
+- Required knowledge of statistical analysis
+- Must have experience with SQL and database management
+
+Preferred Skills:
+- Experience with deep learning frameworks (TensorFlow, PyTorch)
+- Knowledge of big data technologies (Hadoop, Spark)
+- Experience with cloud platforms (AWS, Azure)
+- Strong problem-solving abilities
+- Excellent communication skills
+- Attention to detail
+
+Responsibilities:
+- Develop and implement machine learning models
+- Analyze large datasets to extract insights
+- Create data visualizations and reports
+- Collaborate with business teams to understand requirements
+- Optimize model performance
+- Document findings and methodologies
+
+Qualifications:
+- Master's or PhD in Computer Science, Statistics, or related field
+- 2+ years of experience in data science
+- Strong mathematical and statistical background
+- Experience with data preprocessing and cleaning
+- Ability to explain complex concepts to non-technical stakeholders 
