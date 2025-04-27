@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <regex>
 #include <iostream>
+#include "Resume.hpp"
 #include "../constants/skills.hpp"
 
 JobDescription::JobDescription() : content("") {}
@@ -138,9 +139,40 @@ double JobDescription::calculateMatchScore(const std::string& text) const {
         }
     }
     
+    // Normalize the score based on the total possible points
+    double maxPossibleScore = (requiredSkills.size() * 5.0) + (preferredSkills.size() * 2.0);
+    if (maxPossibleScore > 0) {
+        score = (score / maxPossibleScore) * 100.0; // Convert to percentage
+    }
+    
     return score;
 }
 
 std::string JobDescription::getContent() const {
     return content;
-} 
+}
+
+double JobDescription::calculateResumeMatchScore(const Resume& resume) const {
+    const std::set<std::string>& resumeSkills = resume.getSkills();
+    double score = 0.0;
+    
+    // Calculate base score from matches
+    for (const auto& skill : resumeSkills) {
+        // Check if it's a required skill
+        if (requiredSkills.find(skill) != requiredSkills.end()) {
+            score += 5.0; // Higher weight for required skills
+        }
+        // Check if it's a preferred skill
+        else if (preferredSkills.find(skill) != preferredSkills.end()) {
+            score += 2.0; // Lower weight for preferred skills
+        }
+    }
+    
+    // Normalize the score based on the total possible points
+    double maxPossibleScore = (requiredSkills.size() * 5.0) + (preferredSkills.size() * 2.0);
+    if (maxPossibleScore > 0) {
+        score = (score / maxPossibleScore) * 100.0; // Convert to percentage
+    }
+    
+    return score;
+}

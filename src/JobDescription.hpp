@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include "Resume.hpp"
 
 class JobDescription {
 private:
@@ -30,6 +31,7 @@ public:
     // Matching
     std::set<std::string> findKeywordMatches(const std::string& text) const;
     double calculateMatchScore(const std::string& text) const;
+    double calculateResumeMatchScore(const Resume& resume) const;
     
     // Getters
     std::string getContent() const;

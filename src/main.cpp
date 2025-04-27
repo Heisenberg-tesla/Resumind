@@ -3,6 +3,7 @@
 #include "Resume.hpp"
 #include "Huffman.hpp"
 #include "JobDescription.hpp"
+#include <iomanip>
 
 namespace fs = std::filesystem;
 
@@ -57,8 +58,8 @@ int main() {
                 Resume resume(entry.path().string());
                 
                 // Calculate match score
-                double matchScore = jobDesc.calculateMatchScore(resume.getContent());
-                std::cout << "Match Score: " << matchScore << std::endl;
+                double resumeMatchScore = jobDesc.calculateResumeMatchScore(resume);
+                std::cout << "Resume Match Score: " << std::fixed << std::setprecision(2) << resumeMatchScore << "%" << std::endl;
                 std::cout << "-------------------" << std::endl;
             }
         }
