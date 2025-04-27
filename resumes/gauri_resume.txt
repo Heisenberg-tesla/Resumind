@@ -4,9 +4,13 @@ Phone: +91-6389866808
 Experience: 1 year  
 
 Skills: 
-C, C++, HTML, CSS, JavaScript, SQL,
-Qt (C++), Bootstrap,
-Photoshop, Canva, Git
+JavaScript, TypeScript, HTML5, CSS3, React.js, Redux,
+Bootstrap, Tailwind CSS, Node.js, Express.js, MongoDB,
+Figma, Photoshop, Canva, Git, GitHub,
+Next.js, Material UI, Styled Components, Jest,
+React Testing Library, Webpack, Babel, ESLint,
+Accessibility (WCAG), Performance Optimization, Progressive Web Apps,
+Responsive Design, Cross-browser Compatibility
 
 Projects:
 - Railway Management System (April 2024): Built a Qt-based train ticketing GUI app with login/signup, real-time train search, and booking history. Integrated SQLite for backend data management.
@@ -22,4 +26,4 @@ Positions:
 - Volunteer, IEEE JIIT (July 2024–Present)
 
 Body:
-Gauri is a proactive and creative developer, specializing in C++ GUI development and real-time computer vision applications. Her projects span accessibility solutions like sign detection and robust desktop systems for train management. A mentor and community contributor, she brings both technical strength and user-centered design to her work.
+Gauri is a frontend developer specializing in modern web technologies and user interface design. Her projects demonstrate expertise in React, TypeScript, and modern CSS frameworks, with a strong focus on responsive design and user experience. A mentor and community contributor, she combines technical skills with a keen eye for design to create engaging and accessible web applications.

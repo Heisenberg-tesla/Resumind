@@ -4,9 +4,15 @@ Phone: +91-8800503633
 Experience: 1 year  
 
 Skills: 
-Java, Python, C++, JavaScript, HTML, CSS, MySQL, 
-Qt(C++), Bootstrap,
-Photoshop, Figma, Canva, DaVinci Resolve
+C++, Python, Java, Node.js, Express.js,
+SQL, MongoDB, MySQL, RESTful APIs,
+Docker, Kubernetes, AWS, Azure,
+Git, GitHub, CI/CD, Microservices,
+GraphQL, gRPC, Redis, RabbitMQ,
+Nginx, Apache, Load Balancing, Caching,
+System Design, Database Optimization,
+API Design, Security Best Practices,
+Cloud Architecture, Serverless Computing
 
 Projects:
 - Railway Management System (2023–Present): Qt + SQLite-based app for train ticket booking and cancellation. Added history tracking and optimized DB queries.
@@ -27,4 +33,4 @@ Positions:
 - Core Team, DSC JIIT (2024–Present)
 
 Body:
-Aditya is a budding technologist with a passion for embedded systems, IoT, and backend engineering. His Railway Management System reflects strong DB design and C++ OOP, while the Home Automation project highlights real-world innovation with sensors and cloud-based control. A contributor to workshops and exhibitions, he blends practical application with a strong CS foundation.
+Aditya is a backend developer specializing in scalable systems and cloud architecture. His work focuses on building robust, high-performance backend systems using modern technologies like Node.js, Docker, and cloud platforms. With expertise in database optimization and microservices, he's developed production-ready systems like the Railway Management System and Cloud Inventory System. A contributor to technical workshops, he combines strong backend fundamentals with modern development practices.

@@ -4,9 +4,12 @@ Phone: +91-9599797061
 Experience: 1 year  
 
 Skills: 
-Java, C++, C, HTML, CSS, JavaScript, SQL, 
-Qt(C++), Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, Mongoose, React.js, 
-EJS, Passport.js, Cloudinary, Canva, Git, GitHub
+JavaScript, TypeScript, HTML5, CSS3, React.js, Redux, Context API,
+Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, Mongoose,
+EJS, Passport.js, Cloudinary, Figma, Canva, Git, GitHub,
+Next.js, Material UI, Chakra UI, Styled Components, Jest,
+React Testing Library, Storybook, Webpack, Babel, ESLint,
+Accessibility (WCAG), Performance Optimization, Progressive Web Apps
 
 Projects:
 - WanderLust (2025): Airbnb-like platform with Node.js, Express, and MongoDB. Features secure login via Passport.js and Cloudinary-based image storage.
@@ -20,4 +23,4 @@ Achievements:
 - GDSC JIIT – Generative AI Study Jams 2023
 
 Body:
-Nehal is a skilled developer with strong expertise in both frontend and backend web development. Her work ranges from dynamic web platforms to AI-integrated applications. With hands-on experience in C++, React, and MongoDB, she’s built production-ready tools like WanderLust and EmoTrack. Passionate about innovation and clean code, she brings both technical rigor and design sense to her projects.
+Nehal is a skilled frontend developer with expertise in modern web technologies. Her work focuses on creating responsive, accessible, and performant user interfaces. With strong experience in React, TypeScript, and modern CSS frameworks, she's built production-ready applications like WanderLust and a custom UI component library. Passionate about user experience and clean code, she brings both technical expertise and design sensibility to her projects.

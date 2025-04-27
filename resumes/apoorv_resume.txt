@@ -4,11 +4,19 @@ Phone: +91-9560861710
 Experience: 2 years  
 
 Skills: 
-C++, Python, JavaScript, C, HTML, CSS, C#, SQL,
-React, MongoDB, Firebase, Kotlin, Flutter,
-Unity, Godot, SDL2,
-Arduino, NodeMCU, FPGA,
-Git, Canva, Figma, Photoshop, Premiere Pro  
+Python, TensorFlow, PyTorch, OpenCV, MediaPipe,
+Pandas, NumPy, Scikit-learn, SQL, MongoDB,
+Machine Learning, Deep Learning, Computer Vision,
+Data Analysis, Data Visualization, Git, GitHub,
+Keras, Matplotlib, Seaborn, Plotly, Jupyter,
+Natural Language Processing, Time Series Analysis,
+Statistical Modeling, Feature Engineering, Model Deployment,
+AWS SageMaker, Google Cloud AI, Azure ML,
+Big Data Processing, Data Mining, Model Optimization,
+Node.js, Express.js, RESTful APIs, GraphQL,
+Docker, Kubernetes, AWS, Azure, CI/CD,
+Microservices, Database Design, API Development,
+System Architecture, Load Balancing, Caching
 
 Projects:
 - Space Invader: Designed a retro shooter game using C++ and SDL2. Optimized frame rate and implemented player control precision.
@@ -27,4 +35,4 @@ Positions:
 - Volunteer, IEEE SB JIIT
 
 Body:
-Apoorv is a tech enthusiast passionate about AI, development, and game design. With strong roots in C++ and modern web technologies, he has built robust projects and contributed to open-source. His game development journey includes Unity and SDL2, while his backend work is centered on the MERN stack. As a student leader, he balances innovation and collaboration, with accolades across hackathons and coding competitions.
+Apoorv is a data scientist specializing in machine learning and computer vision. With expertise in TensorFlow, PyTorch, and OpenCV, he has developed advanced ML systems for image and video analysis. His work focuses on creating accurate and efficient ML models for real-world applications. As a student leader, he combines technical expertise with innovation, with notable achievements in ML competitions and research publications.
