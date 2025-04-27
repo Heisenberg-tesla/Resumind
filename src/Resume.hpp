@@ -1,13 +1,12 @@
 #pragma once
 #include <string>
-#include <vector>
-#include <map>
+#include <set>
 
 class Resume {
 private:
     std::string content;
-    std::map<std::string, int> wordFrequency;
     std::string compressedContent;
+    std::set<std::string> skills;
     
 public:
     Resume();
@@ -16,11 +15,11 @@ public:
     // Text processing methods
     void loadFromFile(const std::string& filePath);
     void analyzeContent();
-    std::map<std::string, int> getWordFrequency() const;
     
     // Getters
     std::string getContent() const;
     std::string getCompressedContent() const;
+    std::set<std::string> getSkills() const;
     
     // Compression/Decompression methods
     void compress(bool print = true);

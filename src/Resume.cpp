@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "Huffman.hpp"
 #include <iostream>
+#include "../constants/skills.hpp"
 
 Resume::Resume() : content("") {}
 
@@ -26,19 +27,24 @@ void Resume::loadFromFile(const std::string& filePath) {
 }
 
 void Resume::analyzeContent() {
-    wordFrequency.clear();
-    std::stringstream ss(content);
-    std::string word;
+    skills.clear();
+    std::string normalizedContent = content;
+    // Convert to lowercase for consistent matching
+    std::transform(normalizedContent.begin(), normalizedContent.end(), normalizedContent.begin(), ::tolower);
     
-    while (ss >> word) {
-        // Convert to lowercase for consistent counting
-        std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-        wordFrequency[word]++;
+    // Check for technical skills
+    for (const auto& skill : Skills::commonSkills) {
+        if (normalizedContent.find(skill) != std::string::npos) {
+            skills.insert(skill);
+        }
     }
-}
-
-std::map<std::string, int> Resume::getWordFrequency() const {
-    return wordFrequency;
+    
+    // Check for soft skills
+    for (const auto& skill : Skills::commonSoftSkills) {
+        if (normalizedContent.find(skill) != std::string::npos) {
+            skills.insert(skill);
+        }
+    }
 }
 
 std::string Resume::getContent() const {
@@ -49,9 +55,11 @@ std::string Resume::getCompressedContent() const {
     return compressedContent;
 }
 
-// These will be implemented after we create the Huffman class
+std::set<std::string> Resume::getSkills() const {
+    return skills;
+}
+
 void Resume::compress(bool print) {
-    // TODO: Implement Huffman compression
     Huffman huffman;
     compressedContent = huffman.compress(content);
     if (print) {
@@ -61,8 +69,7 @@ void Resume::compress(bool print) {
     }
 }
 
-
-
 void Resume::decompress(const std::string& compressedData) {
-    // TODO: Implement Huffman decompression
+    Huffman huffman;
+    content = huffman.decompress(compressedData);
 } 
