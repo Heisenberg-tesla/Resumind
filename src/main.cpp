@@ -59,16 +59,6 @@ int main() {
                 // Calculate match score
                 double matchScore = jobDesc.calculateMatchScore(resume.getContent());
                 std::cout << "Match Score: " << matchScore << std::endl;
-                
-                // Show keyword matches
-                auto matches = jobDesc.findKeywordMatches(resume.getContent());
-                if (!matches.empty()) {
-                    std::cout << "Keyword Matches:" << std::endl;
-                    for (const auto& match : matches) {
-                        std::cout << "- " << match.first << " (" << match.second << " matches)" << std::endl;
-                    }
-                }
-                
                 std::cout << "-------------------" << std::endl;
             }
         }

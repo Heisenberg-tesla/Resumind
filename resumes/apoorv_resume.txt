@@ -4,7 +4,7 @@ Phone: +91-9560861710
 Experience: 2 years  
 
 Skills: 
-C++, Python, JavaScript, C, HTML, CSS, C#, 
+C++, Python, JavaScript, C, HTML, CSS, C#, SQL,
 React, MongoDB, Firebase, Kotlin, Flutter,
 Unity, Godot, SDL2,
 Arduino, NodeMCU, FPGA,

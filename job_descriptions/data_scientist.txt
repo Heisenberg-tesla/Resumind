@@ -6,14 +6,20 @@ Required Skills:
 - Must have experience with data analysis and visualization
 - Required knowledge of statistical analysis
 - Must have experience with SQL and database management
+- Required experience with computer vision (OpenCV, MediaPipe)
+- Must have experience with deep learning frameworks (TensorFlow, PyTorch)
 
 Preferred Skills:
-- Experience with deep learning frameworks (TensorFlow, PyTorch)
-- Knowledge of big data technologies (Hadoop, Spark)
-- Experience with cloud platforms (AWS, Azure)
+- Experience with big data technologies (Hadoop, Spark)
+- Knowledge of cloud platforms (AWS, Azure)
+- Experience with IoT and sensor data analysis
+- Understanding of game development and simulation
 - Strong problem-solving abilities
 - Excellent communication skills
 - Attention to detail
+- Experience with design and visualization tools
+- Knowledge of frontend technologies for data visualization
+- Experience with version control (Git, GitHub)
 
 Responsibilities:
 - Develop and implement machine learning models
@@ -22,10 +28,15 @@ Responsibilities:
 - Collaborate with business teams to understand requirements
 - Optimize model performance
 - Document findings and methodologies
+- Work with IoT and sensor data
+- Implement computer vision solutions
+- Create interactive data visualizations
+- Maintain and optimize data pipelines
 
 Qualifications:
 - Master's or PhD in Computer Science, Statistics, or related field
 - 2+ years of experience in data science
 - Strong mathematical and statistical background
 - Experience with data preprocessing and cleaning
-- Ability to explain complex concepts to non-technical stakeholders 
+- Ability to explain complex concepts to non-technical stakeholders
+- Experience with modern development tools and practices 

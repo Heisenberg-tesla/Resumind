@@ -3,6 +3,8 @@
 #include <sstream>
 #include <algorithm>
 #include <regex>
+#include <iostream>
+#include "../constants/skills.hpp"
 
 JobDescription::JobDescription() : content("") {}
 
@@ -25,11 +27,14 @@ void JobDescription::loadFromFile(const std::string& filePath) {
 }
 
 void JobDescription::loadFromText(const std::string& text) {
+    // Directly assign the text to the content member
     content = text;
     extractKeywords();
 }
 
 void JobDescription::normalizeText(std::string& text) const{
+    // Used to remove all the extra spaces and punctuation from the text
+
     // Convert to lowercase
     std::transform(text.begin(), text.end(), text.begin(), ::tolower);
     
@@ -44,23 +49,6 @@ void JobDescription::normalizeText(std::string& text) const{
 }
 
 void JobDescription::extractKeywords() {
-    // Common technical skills
-    const std::set<std::string> commonSkills = {
-        "c++", "python", "java", "javascript", "html", "css",
-        "sql", "database", "git", "linux", "windows", "macos",
-        "algorithm", "data structure", "oop", "design pattern",
-        "machine learning", "ai", "deep learning", "neural network",
-        "web development", "frontend", "backend", "full stack",
-        "cloud", "aws", "azure", "gcp", "docker", "kubernetes"
-    };
-    
-    // Common soft skills
-    const std::set<std::string> commonSoftSkills = {
-        "communication", "teamwork", "leadership", "problem solving",
-        "time management", "adaptability", "creativity", "critical thinking",
-        "organization", "attention to detail", "analytical", "strategic"
-    };
-    
     std::string normalizedContent = content;
     normalizeText(normalizedContent);
     
@@ -69,15 +57,23 @@ void JobDescription::extractKeywords() {
     
     // Extract all words as potential keywords
     while (ss >> word) {
-        keywords.insert(word);
+        allWords.insert(word);
+    }
+    
+    // Find section positions once
+    size_t requiredSection = normalizedContent.find("required skills");
+    size_t preferredSection = normalizedContent.find("preferred skills");
+    std::string requiredSectionText;
+    
+    if (requiredSection != std::string::npos && preferredSection != std::string::npos) {
+        // Get the text between "required skills:" and "preferred skills:"
+        requiredSectionText = normalizedContent.substr(requiredSection, preferredSection - requiredSection);
     }
     
     // Identify required and preferred skills
-    for (const auto& skill : commonSkills) {
+    for (const auto& skill : Skills::commonSkills) {
         if (normalizedContent.find(skill) != std::string::npos) {
-            // Check if it's marked as required (e.g., "must have", "required")
-            if (normalizedContent.find("must have " + skill) != std::string::npos ||
-                normalizedContent.find("required " + skill) != std::string::npos) {
+            if (!requiredSectionText.empty() && requiredSectionText.find(skill) != std::string::npos) {
                 requiredSkills.insert(skill);
             } else {
                 preferredSkills.insert(skill);
@@ -86,15 +82,15 @@ void JobDescription::extractKeywords() {
     }
     
     // Add soft skills
-    for (const auto& skill : commonSoftSkills) {
+    for (const auto& skill : Skills::commonSoftSkills) {
         if (normalizedContent.find(skill) != std::string::npos) {
             preferredSkills.insert(skill);
         }
     }
 }
 
-const std::set<std::string>& JobDescription::getKeywords() const {
-    return keywords;
+const std::set<std::string>& JobDescription::getAllWords() const {
+    return allWords;
 }
 
 const std::set<std::string>& JobDescription::getRequiredSkills() const {
@@ -105,16 +101,23 @@ const std::set<std::string>& JobDescription::getPreferredSkills() const {
     return preferredSkills;
 }
 
-std::map<std::string, int> JobDescription::findKeywordMatches(const std::string& text) const {
-    std::map<std::string, int> matches;
+std::set<std::string> JobDescription::findKeywordMatches(const std::string& text) const {
+    // Used to find which skills appear in the text
+    std::set<std::string> matches;
     std::string normalizedText = text;
     normalizeText(normalizedText);
     
-    for (const auto& keyword : keywords) {
-        size_t pos = 0;
-        while ((pos = normalizedText.find(keyword, pos)) != std::string::npos) {
-            matches[keyword]++;
-            pos += keyword.length();
+    // Check matches in required skills
+    for (const auto& skill : requiredSkills) {
+        if (normalizedText.find(skill) != std::string::npos) {
+            matches.insert(skill);
+        }
+    }
+    
+    // Check matches in preferred skills
+    for (const auto& skill : preferredSkills) {
+        if (normalizedText.find(skill) != std::string::npos) {
+            matches.insert(skill);
         }
     }
     
@@ -125,21 +128,12 @@ double JobDescription::calculateMatchScore(const std::string& text) const {
     auto matches = findKeywordMatches(text);
     double score = 0.0;
     
-    // Calculate base score from keyword matches
-    for (const auto& match : matches) {
-        score += match.second; // Each match contributes to the score
-    }
-    
-    // Bonus for required skills
-    for (const auto& skill : requiredSkills) {
-        if (text.find(skill) != std::string::npos) {
+    // Calculate base score from matches
+    for (const auto& skill : matches) {
+        // Check if it's a required skill
+        if (requiredSkills.find(skill) != requiredSkills.end()) {
             score += 5.0; // Higher weight for required skills
-        }
-    }
-    
-    // Bonus for preferred skills
-    for (const auto& skill : preferredSkills) {
-        if (text.find(skill) != std::string::npos) {
+        } else {
             score += 2.0; // Lower weight for preferred skills
         }
     }

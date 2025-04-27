@@ -9,7 +9,7 @@ private:
     std::string content;
     std::set<std::string> requiredSkills;
     std::set<std::string> preferredSkills;
-    std::set<std::string> keywords;
+    std::set<std::string> allWords;
     
     void extractKeywords();
     void normalizeText(std::string& text) const;
@@ -23,12 +23,12 @@ public:
     void loadFromText(const std::string& text);
     
     // Keyword analysis
-    const std::set<std::string>& getKeywords() const;
+    const std::set<std::string>& getAllWords() const;
     const std::set<std::string>& getRequiredSkills() const;
     const std::set<std::string>& getPreferredSkills() const;
     
     // Matching
-    std::map<std::string, int> findKeywordMatches(const std::string& text) const;
+    std::set<std::string> findKeywordMatches(const std::string& text) const;
     double calculateMatchScore(const std::string& text) const;
     
     // Getters
