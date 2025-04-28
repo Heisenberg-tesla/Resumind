@@ -133,9 +133,9 @@ void viewCompressedResume(const std::string& filePath) {
         std::cout << "\nResume Details:" << std::endl;
         std::cout << "Filename: " << fs::path(filePath).filename() << std::endl;
         std::cout << "Original Size: " << resume.getContent().size() << " bytes" << std::endl;
-        std::cout << "Compressed Size: " << resume.getCompressedContent().size() << " bytes" << std::endl;
+        std::cout << "Compressed Size: " << (resume.getCompressedBits().size() + 7) / 8 << " bytes" << std::endl;
         std::cout << "Compression Ratio: " << std::fixed << std::setprecision(2) 
-                  << (static_cast<double>(resume.getCompressedContent().size()) / resume.getContent().size() * 100) << "%" << std::endl;
+                  << (static_cast<double>((resume.getCompressedBits().size() + 7) / 8) / resume.getContent().size() * 100) << "%" << std::endl;
     
 
         // Print the skills

@@ -57,45 +57,47 @@ void Huffman::generateCodes(const std::shared_ptr<HuffmanNode>& node, const std:
     generateCodes(node->right, code + "1");
 }
 
-std::string Huffman::compress(const std::string& text) {
+std::vector<bool> Huffman::compress(const std::string& text) {
     auto frequencies = calculateFrequencies(text);
     buildTree(frequencies);
     
-    std::string compressed;
+    std::vector<bool> compressedBits;
     for (char ch : text) {
-        compressed += huffmanCodes[ch];
+        const std::string& code = huffmanCodes[ch];
+        for (char bit : code) {
+            compressedBits.push_back(bit == '1');
+        }
     }
     
-    return compressed;
+    return compressedBits;
 }
 
-std::string Huffman::decompress(const std::string& compressedText, const std::map<char, int>& frequencies) {
+std::string Huffman::decompress(const std::vector<bool>& compressedBits, const std::map<char, int>& frequencies) {
     // Build the tree
     buildTree(frequencies);
-    
-    std::string decompressed;
-    auto current = root;
-
 
     // Check if the tree is built
     if (!root) {
         throw std::runtime_error("Huffman tree not built");
     }
+    
+    std::string result;
+    auto current = root;
 
-    for (char bit : compressedText) {
-        if (bit == '0') {
-            current = current->left;
-        } else {
+    for (bool bit : compressedBits) {
+        if (bit) {
             current = current->right;
+        } else {
+            current = current->left;
         }
-        
+
         if (current->character != '\0') {
-            decompressed += current->character;
+            result += current->character;
             current = root;
         }
     }
 
-    return decompressed;
+    return result;
 }
 
 void Huffman::printCodes() const {

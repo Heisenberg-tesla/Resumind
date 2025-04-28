@@ -53,8 +53,8 @@ std::string Resume::getContent() const {
     return content;
 }
 
-std::string Resume::getCompressedContent() const {
-    return compressedContent;
+std::vector<bool> Resume::getCompressedBits() const {
+    return compressedBits;
 }
 
 std::set<std::string> Resume::getSkills() const {
@@ -65,10 +65,11 @@ void Resume::compress(bool print) {
     Huffman huffman;
     frequencyTable = huffman.calculateFrequencies(content);  // Store frequency table
     originalLength = content.size();                         // Store original length
-    compressedContent = huffman.compress(content);
+    compressedBits = huffman.compress(content);
+
     if (print) {
         std::cout << "Original size: " << content.size() << " bytes" << std::endl;
-        std::cout << "Compressed size: " << (compressedContent.size() + 7) / 8 << " bytes" << std::endl;
+        std::cout << "Compressed size: " << (compressedBits.size() + 7) / 8 << " bytes" << std::endl;
         std::cout << "-------------------" << std::endl;
     }
 }
@@ -85,7 +86,7 @@ void Resume::ensureDirectoryExists(const std::string& dirPath) const {
 }
 
 void Resume::saveCompressed(const std::string& outputDir) {
-    if (compressedContent.empty()) {
+    if (compressedBits.empty()) {
         throw std::runtime_error("No compressed content available. Call compress() first.");
     }
 
@@ -96,19 +97,41 @@ void Resume::saveCompressed(const std::string& outputDir) {
     std::string compressedPath = outputDir + "/" + filename + ".compressed";
     
     // Save the compressed content and metadata
-    std::ofstream outFile(compressedPath);
+    std::ofstream outFile(compressedPath, std::ios::binary);
     if (!outFile.is_open()) {
         throw std::runtime_error("Could not create compressed file: " + compressedPath);
     }
     
     // Save metadata first
     outFile << originalLength << "\n";  // Save original length
+    outFile << compressedBits.size() << "\n"; // Save number of bits
+    
     // Save frequency table
     for (const auto& pair : frequencyTable) {
         outFile << static_cast<int>(pair.first) << " " << pair.second << "\n";
     }
     outFile << "---\n";  // Separator between metadata and compressed content
-    outFile << compressedContent;
+    
+    // Pack bits into bytes and save
+    uint8_t byte = 0;
+    int bitCount = 0;
+
+    for (bool bit : compressedBits) {
+        byte = (byte << 1) | (bit ? 1 : 0);
+        bitCount++;
+        if (bitCount == 8) {
+            outFile.write(reinterpret_cast<const char*>(&byte), 1);
+            byte = 0;
+            bitCount = 0;
+        }
+    }
+    
+    // Write any remaining bits
+    if (bitCount > 0) {
+        byte <<= (8 - bitCount);  // Left shift remaining bits to fill the byte
+        outFile.write(reinterpret_cast<const char*>(&byte), 1);
+    }
+    
     outFile.close();
     
     std::cout << "Compressed resume saved to: " << compressedPath << std::endl;
@@ -118,7 +141,7 @@ void Resume::loadCompressed(const std::string& filePath) {
     filename = std::filesystem::path(filePath).filename().string();
     std::cout << "Loading compressed resume from: " << filePath << std::endl;
 
-    std::ifstream inFile(filePath);
+    std::ifstream inFile(filePath, std::ios::binary);
     if (!inFile.is_open()) {
         throw std::runtime_error("Could not open compressed file: " + filePath);
     }
@@ -126,7 +149,11 @@ void Resume::loadCompressed(const std::string& filePath) {
     // Read metadata
     inFile >> originalLength;
     inFile.ignore();  // Skip newline
-
+    
+    size_t numBits;
+    inFile >> numBits;
+    inFile.ignore();  // Skip newline
+    
     // Read frequency table
     frequencyTable.clear();
     std::string line;
@@ -136,27 +163,29 @@ void Resume::loadCompressed(const std::string& filePath) {
         iss >> charCode >> frequency;
         frequencyTable[static_cast<char>(charCode)] = frequency;
     }
-
-    // Convert frequency table to huffman tree
-    Huffman huffman;
-
-    // Read compressed content
-    std::stringstream buffer;
-    buffer << inFile.rdbuf();
-    compressedContent = buffer.str();
-
+    
+    // Read compressed bits
+    compressedBits.clear();
+    compressedBits.reserve(numBits);
+    
+    uint8_t byte;
+    size_t bitsRead = 0;
+    while (inFile.read(reinterpret_cast<char*>(&byte), 1) && bitsRead < numBits) {
+        for (int i = 7; i >= 0 && bitsRead < numBits; --i) {
+            compressedBits.push_back((byte >> i) & 1);
+            bitsRead++;
+        }
+    }
+    
     // Decompress the content
-    content = huffman.decompress(compressedContent, frequencyTable);
-
-    std::cout << "Decompressed content: " << content.size() << std::endl;
+    Huffman huffman;
+    content = huffman.decompress(compressedBits, frequencyTable);
     
     // Verify decompression
     if (content.size() != originalLength) {
         throw std::runtime_error("Decompression failed: size mismatch");
     }
     
-    std::cout << "Decompression successful" << std::endl;
-
     // Re-analyze content for skills
     analyzeContent();
 } 

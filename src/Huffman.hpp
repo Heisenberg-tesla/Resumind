@@ -3,6 +3,7 @@
 #include <map>
 #include <queue>
 #include <memory>
+#include <vector>
 
 struct HuffmanNode {
     char character;
@@ -26,8 +27,8 @@ public:
     Huffman();
     
     // Compression methods
-    std::string compress(const std::string& text);
-    std::string decompress(const std::string &compressedText, const std::map<char, int> &frequencies);
+    std::vector<bool> compress(const std::string& text);
+    std::string decompress(const std::vector<bool>& compressedBits, const std::map<char, int>& frequencies);
 
     // Helper methods
     std::map<char, int> calculateFrequencies(const std::string& text);
