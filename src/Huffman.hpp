@@ -27,8 +27,8 @@ public:
     
     // Compression methods
     std::string compress(const std::string& text);
-    std::string decompress(const std::string& compressedText);
-    
+    std::string decompress(const std::string &compressedText, const std::map<char, int> &frequencies);
+
     // Helper methods
     std::map<char, int> calculateFrequencies(const std::string& text);
     void printCodes() const;

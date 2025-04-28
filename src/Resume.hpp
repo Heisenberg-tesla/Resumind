@@ -1,12 +1,19 @@
 #pragma once
 #include <string>
 #include <set>
+#include <filesystem>
+#include <map>
 
 class Resume {
 private:
     std::string content;
     std::string compressedContent;
     std::set<std::string> skills;
+    std::map<char, int> frequencyTable;  // Store frequency table for decompression
+    size_t originalLength;               // Store original content length
+    std::string filename;
+    
+    void ensureDirectoryExists(const std::string& dirPath) const;
     
 public:
     Resume();
@@ -23,5 +30,7 @@ public:
     
     // Compression/Decompression methods
     void compress(bool print = true);
-    void decompress(const std::string& compressedData);
+    // void decompress(const std::string& compressedData);
+    void saveCompressed(const std::string& outputDir = "compressed_resumes");
+    void loadCompressed(const std::string& filePath);
 }; 

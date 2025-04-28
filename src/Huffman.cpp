@@ -69,10 +69,19 @@ std::string Huffman::compress(const std::string& text) {
     return compressed;
 }
 
-std::string Huffman::decompress(const std::string& compressedText) {
+std::string Huffman::decompress(const std::string& compressedText, const std::map<char, int>& frequencies) {
+    // Build the tree
+    buildTree(frequencies);
+    
     std::string decompressed;
     auto current = root;
-    
+
+
+    // Check if the tree is built
+    if (!root) {
+        throw std::runtime_error("Huffman tree not built");
+    }
+
     for (char bit : compressedText) {
         if (bit == '0') {
             current = current->left;
@@ -85,7 +94,7 @@ std::string Huffman::decompress(const std::string& compressedText) {
             current = root;
         }
     }
-    
+
     return decompressed;
 }
 
@@ -93,4 +102,4 @@ void Huffman::printCodes() const {
     for (const auto& pair : huffmanCodes) {
         std::cout << pair.first << ": " << pair.second << std::endl;
     }
-} 
+}
