@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <vector>
 #include <string>
+#include <fstream>
 #include "Resume.hpp"
 #include "Huffman.hpp"
 #include "JobDescription.hpp"
@@ -148,6 +149,37 @@ void viewCompressedResume(const std::string& filePath) {
     }
 }
 
+void decompressResume(const std::string& filePath) {
+    try {
+        // Check if the decompressed file already exists
+        // decompressed file is in resumes/ with the same name as the compressed file without the .compressed extension 
+        std::string decompressedFilePath = "resumes/" + fs::path(filePath).stem().string();
+        if (fs::exists(decompressedFilePath)) {
+            std::cout << "Decompressed file already exists. Please delete it before decompressing again." << std::endl;
+            return;
+        }
+
+        Resume resume;
+        resume.loadCompressed(filePath);
+
+        std::cout << "\nDecompressed Resume Details:" << std::endl;
+        std::cout << "Filename: " << fs::path(filePath).filename() << std::endl;
+        std::cout << "Original Size: " << resume.getContent().size() << " bytes" << std::endl;
+        std::cout << "Decompressed Size: " << resume.getCompressedBits().size() << " bytes" << std::endl;
+
+        // Save the decompressed content to the decompressed file
+        std::ofstream decompressedFile(decompressedFilePath);
+        decompressedFile << resume.getContent();
+        decompressedFile.close();
+
+        std::cout << "Decompressed file saved to: " << decompressedFilePath << std::endl;
+
+    } catch (const std::exception& e) { 
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+}
+
+
 void displayMenu() {
     std::cout << "\nResume Scanner Menu:" << std::endl;
     std::cout << "1. List Job Descriptions" << std::endl;
@@ -156,6 +188,7 @@ void displayMenu() {
     std::cout << "4. Process Resumes for a Job Description" << std::endl;
     std::cout << "5. Compress and Store a Resume" << std::endl;
     std::cout << "6. View Compressed Resumes" << std::endl;
+    std::cout << "7. Decompress a Resume" << std::endl;
     std::cout << "0. Exit" << std::endl;
     std::cout << "Enter your choice: ";
 }
@@ -233,6 +266,21 @@ int main() {
                     std::cin >> resumeChoice;
                     if (resumeChoice >= 1 && resumeChoice <= static_cast<int>(compressedFiles.size())) {
                         viewCompressedResume(compressedFiles[resumeChoice - 1]);
+                    }
+                    break;
+                }
+                case 7: {
+                    auto compressedFiles = getCompressedResumeFiles();
+                    if (compressedFiles.empty()) {
+                        std::cout << "No compressed resumes available." << std::endl;
+                        break;
+                    }
+                    listCompressedResumes();
+                    int resumeChoice;
+                    std::cout << "Select a compressed resume to decompress (1-" << compressedFiles.size() << "): ";
+                    std::cin >> resumeChoice;
+                    if (resumeChoice >= 1 && resumeChoice <= static_cast<int>(compressedFiles.size())) {
+                        decompressResume(compressedFiles[resumeChoice - 1]);
                     }
                     break;
                 }
