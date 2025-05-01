@@ -165,7 +165,6 @@ void decompressResume(const std::string& filePath) {
         std::cout << "\nDecompressed Resume Details:" << std::endl;
         std::cout << "Filename: " << fs::path(filePath).filename() << std::endl;
         std::cout << "Original Size: " << resume.getContent().size() << " bytes" << std::endl;
-        std::cout << "Decompressed Size: " << resume.getCompressedBits().size() << " bytes" << std::endl;
 
         // Save the decompressed content to the decompressed file
         std::ofstream decompressedFile(decompressedFilePath);

@@ -1,0 +1,28 @@
+Name: Ashish Kaushik  
+Email: 23103347@mail.jiit.ac.in  
+Phone: +91-7048964921  
+Experience: 1 year  
+
+Skills:
+Python, TensorFlow, PyTorch, OpenCV, MediaPipe,
+Pandas, NumPy, Scikit-learn, SQL, MongoDB,
+Data Analysis, Machine Learning, Deep Learning,
+Computer Vision, Data Visualization, Git, GitHub,
+Keras, Matplotlib, Seaborn, Plotly, Jupyter,
+Natural Language Processing, Time Series Analysis,
+Statistical Modeling, Feature Engineering, Model Deployment,
+AWS SageMaker, Google Cloud AI, Azure ML
+
+Projects:
+- Arcade Fusion (2023): GUI-based arcade game manager using Qt (C++17). Combined frontend GUI with terminal-based retro games. Used OOP principles for modular game management.
+- Real-Time Language Translator (2024): Streamlit-based live translator using Google Speech API, GoogleTrans, GTTS, and PyGame. Delivered accurate, real-time translations with TTS and speech recognition.
+
+Achievements:
+- Presented Real-Time Translator at SPARK'24, CICE JIIT
+
+Positions:
+- Volunteer, Tech CSE, Creativity and Innovation Cell in Electronics (2024–Present)
+- Volunteer, Tech CSE, Microcontroller Systems & Robotics Hub (2024–Present)
+
+Body:
+Ashish is a data scientist specializing in machine learning and computer vision. His work focuses on developing advanced ML models for real-world applications, including language translation and emotion recognition. With expertise in TensorFlow, PyTorch, and OpenCV, he's built production-ready ML systems with high accuracy rates. Passionate about AI innovation, he combines strong mathematical foundations with practical implementation skills.
