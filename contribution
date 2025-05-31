@@ -1,0 +1,15 @@
+Apoorv Mittal  : Resume Processing & Extraction
+● Handle file input/output for uploading resumes in .txt format.
+● Implement string parsing to extract key details
+● Develop a keyword matching system to compare resumes with job descriptions.
+● Assign an initial score based on keyword relevance.
+Aayush Sharma  : Ranking & Compression Algorithms
+● Implement sorting algorithms (Merge Sort, Quick Sort) to rank resumes based on
+relevance.
+● Develop Huffman Coding for text compression to optimize resume storage.
+● Ensure decompression is working correctly for resume retrieval.
+Ayush Bhardwaj  : System Integration & CLI Development
+● Build an interactive CLI-based interface for recruiters.
+● Implement menu-driven navigation (Upload Resume, View Ranked Resumes, Search,
+Decompress).
+● Conduct testing & debugging to ensure smooth user interaction.
